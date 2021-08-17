@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.87.0">
-    <title>Niklas Kantele</title>
+    <title>{{ blog.title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -60,7 +60,7 @@
             <a class="nav-link" href="https://www.instagram.com/niklaskantele_/">Instagram</a>
             <a class="nav-link" href="https://www.youtube.com/channel/UCxSzPYoVSl8W1Dg1uha4amQ">Youtube</a>
             <a class="nav-link" href="{% static 'CV.pdf' %}">Resume</a>
-            <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
+            <a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
           </div>
         </div>
       </div>
@@ -68,42 +68,16 @@
 </header>
 
 <main>
+  <div class="container">
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hi, I'm Niklas.</h1>
-        <p class="lead text-muted">Hey, my name is Niklas Kantele and I'm a junior programmer
-            currently studying Signal processing and machine learning at the Tampere University of
-            Applied Sciences.</p>
-        <p>
-          <a href="mailto:niklas.kantele@hotmail.com" class="btn btn-primary my-2">Email me</a>
-        </p>
-        <img src="{% static 'CV-kuva.jpg' %}" height="300">
-      </div>
-    </div>
-  </section>
+    <h1 class="text-center pt-3">{{ blog.title }}</h1>
+    <p class="text-center">{{ blog.date }}</p>
+    <img class="img-fluid" src="{{ blog.image.url }}"/>
+    <br/>
+    <br/>
+    <p>{{ blog.body }}</p>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <h1 class="text-center">Here are some of my work!</h1>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-        {% for job in jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="card-img-top" src="{{ job.image.url }}" />
-
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-
-      </div>
-    </div>
   </div>
 
 </main>
