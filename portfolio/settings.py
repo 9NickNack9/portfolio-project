@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEVELOPMENT_MODE = True #os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
